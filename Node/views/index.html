@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "/style.css">
+<title>Home</title>
+<script>
+fetch("/dashboard" , {method: "GET"})
+    .then((response) => {
+        if (response.ok) 
+        {
+            document.querySelectorAll(".loged").forEach(el => el.style.display = "inline");
+            document.querySelectorAll(".logreg").forEach(el => el.style.display = "none");
+        } 
+        
+        else 
+        {
+            document.querySelectorAll(".loged").forEach(el => el.style.display = "none");
+            document.querySelectorAll(".logreg").forEach(el => el.style.display = "inline");
+        }
+    })
+
+    .catch(error => 
+    {
+        console.error("There was a problem with the fetch operation:", error);
+});
+
+</script>
+</head>
+<body>
+    <header>
+        <h1>Home</h1>
+        <nav>
+            <span> <a href="/" class="le">Home</a> </span>
+            <span> <a href="chat-room.html" class="ri loged">Chat Room</a> </span>
+            <span> <a href="/logout" class="ri loged">Logout</a> </span>
+            <span><img src="/user-avatar.jpg" class="loged"></span>            
+            <span> <a href="login.html" class="ri logreg">Login</a> </span>
+            <span> <a href="reg.html" class="ri logreg">Registracion</a> </span>
+        </nav>
+    </header>
+</body>
+</html>

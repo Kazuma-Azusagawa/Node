@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <script> 
+        let input = document.getElementsByTagName("input");
+        
+        function check() 
+        {
+            if (input[2].value != input[3].value) 
+            {
+                alert("Passwords do not match!");
+                input[2].style.borderColor = "red";
+                input[3].style.borderColor = "red";
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</head>
+<body>
+<header>
+    <h1>Registration</h1>
+    
+    <nav>
+        <span ><a href = "/" class="le">Home</a></span>
+        <span ><a href = "/login.html" class="ri" style="left: 90%;">Login</a></span>
+    </nav>
+</header>
+
+    <form action = "/reg" method = "POST" onsubmit="return check();">
+
+        <span class="iT">Username:</span><br>
+        <input type = "text" id="username" name="username" required>
+        <br>
+
+        <span class="iT">Email:</span><br>
+        <input type = "text" id = "email" name = "email" required>
+        <br>
+
+        <span class="iT">Password:</span><br>
+        <input type="password" id="password" name = "password" required>
+        <br>
+
+        <span class="iT">Confirm Password:</span><br>
+        <input type = "password" id = "confirm-password" name = "confirm-password" required>
+        <br>
+
+        <input type = "submit" value = "Register">
+
+    </form>
+
+</body>
+</html>
