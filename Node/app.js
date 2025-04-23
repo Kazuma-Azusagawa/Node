@@ -11,7 +11,7 @@ const server = http.createServer(app);
 const io = new Server(server); 
 
 
-mongoose.connect("mongodb+srv://<userName>:<password>@cluster0.bbz6s13.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb connection string")
     .then(() => console.log("MongoDB connected!"))
     .catch(err => console.error("MongoDB connection error:", err));
 
